@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Antibiotika">
+<meta name="theme-color" content="#f8fafc">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACmElEQVR4nO3cwVEbQRBAUeHynSM5UEUsvhGkb8TihHx38fHK0kyvS+8loKX5zMyuanl6fnm9wGe+TV8A5yUOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJg/R9+gIuP379nL6E8/p4ex/89Kfnl9eRD9bEVUYqGYhDFv9scyK7zxzKuMXm6e1bOWRxR3uWkE0rhzLua8883cqSdsRh2Vhhw1SXx6GMdVbPdv4h2GX6Uc8XIz7the2xduX464/38fY++ws4syPDWRrQ5IFUFkcMTmksDmUcNzWrhXGMb5kPYt2cZ1YOy8a1RibmIRhJHCRxkMRBmonDjcy1Ria2MA63JHusm/PYtmLxOG5qVpNnDn0cMTiltXEc+d5IIuXIcJbu3af4yv60fZz2wvZYvq04lq6zerY7zhz6WGHDVD0EI22Kw+JxX3vmuft1yAc/4t1u55/Z7m3FEnKLzdPzlv3/4VHesv+DSr7woP+fg/NzK0sSB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQfgNWjmR/1IGPlwAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACmElEQVR4nO3cwVEbQRBAUeHynSM5UEUsvhGkb8TihHx38fHK0kyvS+8loKX5zMyuanl6fnm9wGe+TV8A5yUOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJg/R9+gIuP379nL6E8/p4ex/89Kfnl9eRD9bEVUYqGYhDFv9scyK7zxzKuMXm6e1bOWRxR3uWkE0rhzLua8883cqSdsRh2Vhhw1SXx6GMdVbPdv4h2GX6Uc8XIz7the2xduX464/38fY++ws4syPDWRrQ5IFUFkcMTmksDmUcNzWrhXGMb5kPYt2cZ1YOy8a1RibmIRhJHCRxkMRBmonDjcy1Ria2MA63JHusm/PYtmLxOG5qVpNnDn0cMTiltXEc+d5IIuXIcJbu3af4yv60fZz2wvZYvq04lq6zerY7zhz6WGHDVD0EI22Kw+JxX3vmuft1yAc/4t1u55/Z7m3FEnKLzdPzlv3/4VHesv+DSr7woP+fg/NzK0sSB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQfgNWjmR/1IGPlwAAAABJRU5ErkJggg==">
+<title>Antibiotika — Lernhilfe</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f8fafc; color: #1e293b; font-size: 15px; line-height: 1.4;
+    -webkit-text-size-adjust: 100%;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 22px 16px 40px; }
+
+  h1 { font-size: 24px; font-weight: 700; color: #0f172a; letter-spacing: -0.3px; margin: 0; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #94a3b8; }
+  .sub { font-size: 13px; color: #64748b; margin-top: 3px; }
+  .head-mark { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+
+  /* Tabs */
+  .tabs { position: sticky; top: 0; z-index: 20; background: rgba(248,250,252,0.92); backdrop-filter: blur(8px);
+          display: flex; gap: 8px; overflow-x: auto; padding: 12px 0; margin: 16px 0; }
+  .tab { white-space: nowrap; border: 0; background: transparent; color: #475569; font-size: 14px; font-weight: 500;
+         padding: 8px 16px; border-radius: 999px; cursor: pointer; }
+  .tab.active { background: #0f172a; color: #fff; }
+
+  .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
+  .muted { color: #64748b; font-size: 13px; }
+  .row { padding: 12px 16px; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; padding: 11px 12px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500;
+          padding: 2px 9px; border-radius: 999px; border: 1px solid; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex: none; }
+
+  /* Segmented */
+  .seg { display: flex; gap: 4px; background: #f1f5f9; padding: 4px; border-radius: 12px; margin: 14px 0; }
+  .seg button { flex: 1; min-width: 0; border: 0; background: transparent; color: #64748b; font-size: 13px;
+                font-weight: 500; padding: 9px 6px; border-radius: 9px; cursor: pointer; }
+  .seg button.active { background: #fff; color: #0f172a; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+
+  /* Disease accordion */
+  .disease { border-left: 4px solid; border-radius: 14px; margin-bottom: 10px; overflow: hidden; }
+  .d-head { width: 100%; display: flex; align-items: center; gap: 12px; padding: 13px 15px; background: #fff;
+            border: 0; cursor: pointer; text-align: left; }
+  .d-title { font-weight: 600; color: #0f172a; font-size: 15px; }
+  .d-pre { font-size: 12px; color: #94a3b8; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chev { width: 16px; height: 16px; flex: none; color: #94a3b8; transition: transform .15s; }
+  .chev.up { transform: rotate(180deg); }
+  .d-body { padding: 4px 15px 15px; border-top: 1px solid #f1f5f9; background: #fff; }
+  .lbl { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #94a3b8; margin: 12px 0 5px; }
+  .cov-item { margin-bottom: 9px; }
+  .cov-ctx { font-size: 11px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: #94a3b8; }
+  .cov-drug { font-size: 14px; color: #0f172a; line-height: 1.35; }
+  .cov-note { color: #94a3b8; }
+  .cov-cover { display: flex; gap: 6px; align-items: flex-start; margin-top: 2px; font-size: 12.5px; color: #64748b; }
+  .cov-cover b { color: #334155; font-weight: 600; }
+  .tgt { color: #0d9488; flex: none; line-height: 1.3; }
+  .pearl { display: flex; gap: 8px; background: #f8fafc; border: 1px solid #f1f5f9; border-radius: 10px;
+           padding: 9px 11px; margin-top: 12px; font-size: 13px; color: #475569; }
+  .pearl .bulb { color: #f59e0b; flex: none; }
+
+  /* Reverse / classes */
+  .blk { margin-bottom: 10px; }
+  .blk .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .drugname { font-size: 14px; font-weight: 600; color: #0f172a; }
+  .arrowlist { list-style: none; margin: 8px 0 0; padding: 0; }
+  .arrowlist li { display: flex; gap: 8px; font-size: 13.5px; color: #475569; margin-bottom: 4px; }
+  .arrowlist li span.a { color: #cbd5e1; flex: none; }
+  .cls-drug { font-size: 13.5px; color: #0f172a; }
+  .cls-note { font-size: 13px; color: #64748b; }
+  .cls-line { margin-bottom: 6px; }
+
+  /* Chips filter */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .fchip { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 13px; padding: 7px 13px;
+           border-radius: 999px; cursor: pointer; }
+  .fchip.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+  /* Flashcard / quiz */
+  .fc { background: #fff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 24px; min-height: 200px;
+        display: flex; flex-direction: column; justify-content: center; cursor: pointer; }
+  .fc .q { font-size: 18px; font-weight: 600; color: #0f172a; line-height: 1.35; }
+  .fc .a { margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f5f9; color: #334155;
+           white-space: pre-line; font-size: 14px; line-height: 1.55; }
+  .fc .hint { margin-top: 16px; font-size: 13px; color: #94a3b8; }
+  .meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .ttype { font-size: 12px; color: #94a3b8; }
+  .rep { font-size: 12px; color: #d97706; font-weight: 600; }
+
+  .btn { border: 0; border-radius: 12px; font-size: 15px; font-weight: 500; padding: 13px; cursor: pointer; width: 100%; }
+  .btn-primary { background: #0f172a; color: #fff; }
+  .btn-ghost { background: #fff; color: #334155; border: 1px solid #cbd5e1; }
+  .btn-good { background: #059669; color: #fff; }
+  .btn-bad { background: #f43f5e; color: #fff; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; margin: 14px 0; }
+  .link { background: 0; border: 0; color: #64748b; font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+  .bar { height: 7px; border-radius: 999px; background: #e2e8f0; overflow: hidden; margin-top: 6px; }
+  .bar > i { display: block; height: 100%; background: #0f172a; }
+  .score { text-align: center; padding: 26px; }
+  .score .big { font-size: 40px; font-weight: 700; color: #0f172a; }
+
+  .mne { display: flex; gap: 10px; padding: 13px 15px; margin-bottom: 10px; }
+  .mne .bulb { color: #f59e0b; flex: none; margin-top: 2px; }
+  .mne b { color: #0f172a; }
+  .mne .body { font-size: 13.5px; color: #475569; margin-top: 3px; white-space: pre-line; }
+
+  footer { margin-top: 30px; padding-top: 14px; border-top: 1px solid #e2e8f0; font-size: 11.5px; color: #94a3b8; }
+  svg.ic { width: 16px; height: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="head-mark">
+      <svg viewBox="0 0 32 32" width="24" height="24" style="color:#0d9488">
+        <rect x="3" y="11" width="26" height="10" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+        <line x1="16" y1="11" x2="16" y2="21" stroke="currentColor" stroke-width="2.2"/>
+      </svg>
+      <span class="eyebrow">Staatsexamen · Lernhilfe</span>
+    </div>
+    <h1>Antibiotika — empirische Therapie</h1>
+    <div class="sub">16 Krankheitsbilder · Erreger → Antibiotikum-Zuordnung · Reserveantibiotika.</div>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+  <main id="content"></main>
+
+  <footer>
+    Lernhilfe auf Basis deiner AMBOSS-Zusammenfassung (Stand 26.06.2026). Empirische Schemata — Dosierung, Allergien und lokale Resistenzlage stets nach aktueller Leitlinie prüfen.
+  </footer>
+</div>
+
+<script>
+/* ================= Daten ================= */
+const CAT = {
+  ambulant:   {label:"Primär ambulant",     dot:"#10b981", cbg:"#ecfdf5", ctx:"#047857", cbd:"#a7f3d0", left:"#10b981"},
+  nosokomial: {label:"Nosokomial / schwer", dot:"#f59e0b", cbg:"#fffbeb", ctx:"#b45309", cbd:"#fde68a", left:"#f59e0b"},
+  setting:    {label:"Setting-abhängig",    dot:"#0ea5e9", cbg:"#f0f9ff", ctx:"#0369a1", cbd:"#bae6fd", left:"#0ea5e9"},
+  spezial:    {label:"Langzeit / Spezial",  dot:"#8b5cf6", cbg:"#f5f3ff", ctx:"#6d28d9", cbd:"#ddd6fe", left:"#8b5cf6"},
+  resistenz:  {label:"Multiresistenz",      dot:"#f43f5e", cbg:"#fff1f2", ctx:"#be123c", cbd:"#fecdd3", left:"#f43f5e"},
+};
+
+const diseases = [
+  {name:"Meningitis",cat:"setting",
+   pathogens:["S. pneumoniae","N. meningitidis","H. influenzae","Listeria monocytogenes"],
+   coverage:[
+     {ctx:"Ambulant – Basis",drug:"Ceftriaxon / Cefotaxim",covers:"Pneumokokken, Meningokokken, H. influenzae"},
+     {ctx:"Ambulant – ergänzend",drug:"Ampicillin",covers:"Listeria monocytogenes"},
+     {ctx:"Bei Resistenzverdacht",drug:"+ Vancomycin ± Rifampicin",covers:"Cephalosporin-resistente Pneumokokken"},
+     {ctx:"Nosokomial",drug:"Vancomycin + Meropenem ± Metronidazol",covers:"nosokomiale / resistente Erreger"}],
+   pearls:"Ampicillin schließt die Listerien-Lücke der Cephalosporine (Neugeborene, Schwangere, >50 J., Immunsupprimierte). Notfall."},
+  {name:"Otitis media",cat:"ambulant",
+   pathogens:["S. pneumoniae","H. influenzae","M. catarrhalis"],
+   coverage:[
+     {ctx:"1. Wahl",drug:"Amoxicillin",covers:"alle drei: S. pneumoniae, H. influenzae, M. catarrhalis"},
+     {ctx:"β-Laktamase-Bildner",drug:"Amoxicillin / Clavulansäure",covers:"β-Laktamase-bildende Stämme"}],
+   pearls:"Erreger-Trio identisch mit Sinusitis und ambulant erworbener Pneumonie."},
+  {name:"Angina tonsillaris",cat:"ambulant",
+   pathogens:["Streptococcus pyogenes (GAS)"],
+   coverage:[
+     {ctx:"Standard",drug:"Penicillin V oder Amoxicillin",covers:"Gruppe-A-Streptokokken (GAS)",note:"8–10 Tage"},
+     {ctx:"Penicillin-Allergie",drug:"Clindamycin",covers:"GAS (Alternative)"}],
+   pearls:"Volle 8–10 Tage behandeln — Prophylaxe von rheumatischem Fieber."},
+  {name:"Pneumonie",cat:"setting",
+   pathogens:["CAP: S. pneumoniae, H. influenzae, M. catarrhalis","atypisch: Mycoplasma, Chlamydophila","HAP: Pseudomonas, MSSA/MRSA, Enterobacterales"],
+   coverage:[
+     {ctx:"Ambulant (CAP)",drug:"Amoxicillin",covers:"Pneumokokken, H. influenzae"},
+     {ctx:"Ambulant – ergänzend",drug:"+ Makrolid",covers:"atypische Erreger (Mykoplasmen, Chlamydophila)"},
+     {ctx:"Nosokomial (HAP)",drug:"Piperacillin/Tazobactam oder Meropenem",covers:"Pseudomonas, Enterobacterales"},
+     {ctx:"MRSA-Verdacht",drug:"Linezolid / Vancomycin",covers:"MRSA"}],
+   pearls:"Makrolid deckt die Atypiker ab. Bei HAP an Pseudomonas und MRSA denken (MRE)."},
+  {name:"Endokarditis",cat:"setting",
+   pathogens:["S. aureus","Viridans-Streptokokken","Enterokokken","seltener HACEK-Gruppe"],
+   coverage:[
+     {ctx:"Enterok. / Streptok.",drug:"Ampicillin + Ceftriaxon",covers:"Enterokokken, Streptokokken"},
+     {ctx:"MSSA",drug:"Flucloxacillin oder Cefazolin",covers:"MSSA"},
+     {ctx:"MRSA / nosokomial",drug:"Vancomycin ± Rifampicin",covers:"MRSA, nosokomiale Stämme"},
+     {ctx:"HACEK",drug:"Ceftriaxon",covers:"HACEK-Gruppe"}],
+   pearls:"Erregergerechte Auswahl: MSSA → Flucloxacillin/Cefazolin, MRSA → Vancomycin, HACEK → Ceftriaxon."},
+  {name:"Typ-B-Gastritis",cat:"spezial",
+   pathogens:["Helicobacter pylori"],
+   coverage:[
+     {ctx:"Bismut-Quadrupel",drug:"PPI + Bismut + Tetracyclin + Metronidazol",covers:"mikroaerophiler H. pylori (kombinierte Abdeckung)"}],
+   pearls:"PPI ist fester Schemabestandteil der Bismut-Quadrupeltherapie."},
+  {name:"Bakterielle Durchfälle",cat:"setting",
+   pathogens:["Campylobacter jejuni","Salmonella enteritidis u. a."],
+   coverage:[
+     {ctx:"1. Wahl",drug:"Azithromycin",covers:"Campylobacter"},
+     {ctx:"Alternative",drug:"Ciprofloxacin oder Ceftriaxon",covers:"Salmonella, Shigella, Yersinia"},
+     {ctx:"Immer",drug:"Flüssigkeitssubstitution",covers:""}],
+   pearls:"Bei leichtem Verlauf primär symptomatisch; Antibiose vor allem bei schwerem Verlauf / Risikopatienten."},
+  {name:"Pseudomembranöse Kolitis",cat:"nosokomial",
+   pathogens:["Clostridioides difficile"],
+   coverage:[
+     {ctx:"1. Wahl",drug:"Fidaxomicin",covers:"C. difficile (gezielt)"},
+     {ctx:"Alternative",drug:"Vancomycin p.o.",covers:"C. difficile"},
+     {ctx:"Alternative",drug:"Metronidazol i.v.",covers:"C. difficile"}],
+   pearls:"Auslösendes Antibiotikum absetzen. Fidaxomicin ist 1. Wahl."},
+  {name:"Harnwegsinfektion",cat:"setting",
+   pathogens:["E. coli (≈ 80 %)","Proteus","Klebsiella","Enterokokken"],
+   coverage:[
+     {ctx:"Unkompliziert",drug:"Fosfomycin oder Nitrofurantoin",covers:"E. coli, Enterokokken"},
+     {ctx:"Kompliziert / nosokomial",drug:"Piperacillin/Tazobactam oder Carbapenem",covers:"ESBL, Proteus, Klebsiella"}],
+   pearls:"Auswahl nach Schweregrad (Zystitis vs. Pyelonephritis) und Katheterstatus."},
+  {name:"STDs",cat:"ambulant",
+   pathogens:["C. trachomatis","N. gonorrhoeae","T. pallidum","H. ducreyi"],
+   coverage:[
+     {ctx:"Chlamydien",drug:"Doxycyclin / Azithromycin",covers:"C. trachomatis"},
+     {ctx:"Gonorrhö",drug:"Ceftriaxon + Azithromycin",covers:"N. gonorrhoeae (+ Chlamydien-Koinfektion)"},
+     {ctx:"Syphilis",drug:"Penicillin G",covers:"T. pallidum"},
+     {ctx:"Ulcus molle",drug:"Ceftriaxon / Azithromycin",covers:"H. ducreyi"}],
+   pearls:"Gonorrhö immer + Azithromycin (Chlamydien-Koinfektion). Syphilis = Penicillin G."},
+  {name:"Erysipel / Phlegmone",cat:"setting",
+   pathogens:["S. pyogenes","seltener S. aureus"],
+   coverage:[
+     {ctx:"Erysipel",drug:"Penicillin V",covers:"Streptokokken"},
+     {ctx:"Phlegmone",drug:"Cefazolin / Flucloxacillin",covers:"MSSA, Streptokokken"},
+     {ctx:"Penicillin-Allergie",drug:"Clindamycin",covers:"grampositive Erreger + Anaerobier"}],
+   pearls:"Erysipel = reine Streptokokken (Penicillin); Phlegmone deckt zusätzlich S. aureus ab."},
+  {name:"Tuberkulose",cat:"spezial",
+   pathogens:["Mycobacterium tuberculosis"],
+   coverage:[
+     {ctx:"Initialphase (2 Monate)",drug:"Isoniazid + Rifampicin + Pyrazinamid + Ethambutol",covers:"gesamtes Erregerspektrum (M. tuberculosis)"},
+     {ctx:"Erhaltungsphase (4 Monate)",drug:"Isoniazid + Rifampicin",covers:"M. tuberculosis"}],
+   pearls:"„2 + 4“ = 6 Monate gesamt (HRZE → HR)."},
+  {name:"Borreliose",cat:"ambulant",
+   pathogens:["Borrelia burgdorferi s.l."],
+   coverage:[
+     {ctx:"Frühstadium",drug:"Doxycyclin oder Amoxicillin",covers:"Borrelien"},
+     {ctx:"Spät / Neuroborreliose",drug:"Ceftriaxon / Cefotaxim i.v.",covers:"zentralnervöse Borrelien"}],
+   pearls:"Neuroborreliose → i.v. Ceftriaxon. Doxycyclin nicht bei Kindern < 8 J. / Schwangeren → Amoxicillin."},
+  {name:"Sepsis",cat:"nosokomial",
+   pathogens:["polymikrobiell: E. coli, Klebsiella, Enterokokken, S. aureus, Pseudomonas"],
+   coverage:[
+     {ctx:"Breitband-Basis",drug:"Piperacillin/Tazobactam",covers:"grampositiv/-negativ inkl. Pseudomonas"},
+     {ctx:"MRSA-Verdacht",drug:"+ Linezolid / Vancomycin",covers:"MRSA"},
+     {ctx:"Schwer / MRE",drug:"+ Carbapenem oder Ciprofloxacin",covers:"3-/4-MRGN"}],
+   pearls:"„Hit hard and early“: Breitband nach Fokus, dann nach Erregernachweis deeskalieren."},
+  {name:"MRSA",cat:"resistenz",
+   pathogens:["Methicillin-resistenter S. aureus"],
+   coverage:[
+     {ctx:"1. Wahl",drug:"Vancomycin oder Linezolid",covers:"MRSA"},
+     {ctx:"Alternativen",drug:"Daptomycin, Ceftarolin (5. Gen.)",covers:"MRSA (Reserve)"}],
+   pearls:"Daptomycin NICHT bei Pneumonie (Inaktivierung durch Surfactant)."},
+  {name:"MRGN",cat:"resistenz",
+   pathogens:["Enterobacterales","P. aeruginosa","A. baumannii"],
+   coverage:[
+     {ctx:"3-MRGN",drug:"Carbapenem",covers:"ESBL-Enterobacterales"},
+     {ctx:"4-MRGN",drug:"Ceftazidim/Avibactam oder Ceftolozan/Tazobactam ± Colistin",covers:"carbapenemresistente gramnegative Erreger"}],
+   pearls:"4-MRGN zusätzlich carbapenemresistent → Reservesubstanzen."},
+];
+
+const reverseLookup = [
+  {drug:"Ceftriaxon / Cefotaxim",cat:"setting",where:["Meningitis → Pneumok./Meningok./H. influenzae","Endokarditis → HACEK","Gonorrhö, Ulcus molle","Neuroborreliose (i.v.)","schwere Enteritis (Salmonella u. a.)"]},
+  {drug:"Ampicillin",cat:"setting",where:["Meningitis → Listerien","Endokarditis → Enterok./Streptok. (+ Ceftriaxon)"]},
+  {drug:"Amoxicillin",cat:"ambulant",where:["Otitis media → alle 3 Erreger","Angina tonsillaris → GAS","Pneumonie (CAP) → Pneumok./H. influenzae","Borreliose Frühstadium"]},
+  {drug:"Amoxicillin / Clavulansäure",cat:"ambulant",where:["Otitis media → β-Laktamase-Bildner"]},
+  {drug:"Penicillin V / G",cat:"setting",where:["Angina tonsillaris, Erysipel → Streptokokken","Syphilis → T. pallidum (Pen G)"]},
+  {drug:"Flucloxacillin / Cefazolin",cat:"setting",where:["Endokarditis & Phlegmone → MSSA"]},
+  {drug:"Piperacillin / Tazobactam",cat:"nosokomial",where:["Pneumonie (HAP) → Pseudomonas/Enterobacterales","HWI kompliziert","Sepsis (Breitband-Basis)"]},
+  {drug:"Carbapeneme (Meropenem)",cat:"nosokomial",where:["Meningitis/Pneumonie nosokomial","HWI → ESBL/Proteus/Klebsiella","3-MRGN"]},
+  {drug:"Vancomycin",cat:"resistenz",where:["Meningitis/Endokarditis nosokomial","C. difficile (p.o.)","MRSA, MRSA-Pneumonie"]},
+  {drug:"Linezolid",cat:"resistenz",where:["MRSA (auch oral)","MRSA bei Pneumonie & Sepsis"]},
+  {drug:"Daptomycin",cat:"resistenz",where:["MRSA-Reserve — nicht bei Pneumonie!"]},
+  {drug:"Ceftarolin",cat:"resistenz",where:["MRSA-Reserve (5.-Gen.-Cephalosporin)"]},
+  {drug:"Fosfomycin / Nitrofurantoin",cat:"ambulant",where:["HWI unkompliziert → E. coli, Enterokokken"]},
+  {drug:"Doxycyclin",cat:"ambulant",where:["Chlamydien","Borreliose Frühstadium"]},
+  {drug:"Azithromycin / Makrolide",cat:"ambulant",where:["atypische Pneumonie","Chlamydien, Gonorrhö (Kombi)","Campylobacter-Enteritis (1. Wahl)"]},
+  {drug:"Metronidazol",cat:"spezial",where:["H.-pylori-Quadrupel","C. difficile (i.v.)","Meningitis nosokomial (Anaerobier)"]},
+  {drug:"Tetracyclin",cat:"spezial",where:["H.-pylori-Quadrupel"]},
+  {drug:"Fidaxomicin",cat:"nosokomial",where:["C. difficile (1. Wahl)"]},
+  {drug:"Ciprofloxacin / Fluorchinolone",cat:"setting",where:["Enteritis → Salmonella/Shigella/Yersinia","HWI / Sepsis (MRE-Abdeckung)"]},
+  {drug:"Clindamycin",cat:"ambulant",where:["Pen.-Allergie: Tonsillitis, Erysipel/Phlegmone → grampos. + Anaerobier"]},
+  {drug:"Gentamicin / Aminoglykoside",cat:"setting",where:["Endokarditis (Synergist)","Sepsis (Kombi)"]},
+  {drug:"Isoniazid·Rifampicin·Pyrazinamid·Ethambutol",cat:"spezial",where:["Tuberkulose (HRZE → HR)"]},
+  {drug:"Ceftazidim/Avibactam · Ceftolozan/Tazobactam · Colistin",cat:"resistenz",where:["4-MRGN (Reservesubstanzen)"]},
+];
+
+const drugClasses = [
+  {klasse:"Penicilline (β-Lactame)",drugs:[
+    {name:"Penicillin V / G",note:"Streptokokken, Syphilis"},
+    {name:"Amoxicillin / Ampicillin",note:"Aminopenicilline; Ampi auch Listerien"},
+    {name:"Flucloxacillin",note:"staphylokokkenwirksam (MSSA)"},
+    {name:"Piperacillin (+ Tazobactam)",note:"pseudomonaswirksam, Breitband"}]},
+  {klasse:"Cephalosporine (β-Lactame)",drugs:[
+    {name:"Cefazolin",note:"1. Gen., MSSA"},
+    {name:"Cefotaxim / Ceftriaxon",note:"3. Gen.; Meningitis, Gonorrhö, HACEK"},
+    {name:"Ceftazidim",note:"3. Gen., pseudomonaswirksam"},
+    {name:"Ceftarolin",note:"5. Gen., MRSA-wirksam"},
+    {name:"Ceftolozan/Tazobactam · Ceftazidim/Avibactam",note:"Reserve, 4-MRGN"}]},
+  {klasse:"Carbapeneme (β-Lactame)",drugs:[{name:"Meropenem",note:"Breitband-Reserve, 3-MRGN"}]},
+  {klasse:"Glykopeptide",drugs:[{name:"Vancomycin",note:"grampositiv, MRSA, C. difficile p.o."}]},
+  {klasse:"Lipopeptide",drugs:[{name:"Daptomycin",note:"grampositiv; nicht bei Pneumonie"}]},
+  {klasse:"Oxazolidinone",drugs:[{name:"Linezolid",note:"grampositiv, MRSA, oral verfügbar"}]},
+  {klasse:"Makrolide",drugs:[{name:"Azithromycin",note:"atypische Erreger, STDs, Campylobacter"}]},
+  {klasse:"Tetracycline / Glycylcycline",drugs:[
+    {name:"Doxycyclin",note:"Chlamydien, Borreliose"},
+    {name:"Tetracyclin",note:"H.-pylori-Quadrupel"},
+    {name:"Tigecyclin",note:"Glycylcyclin, Reserve"}]},
+  {klasse:"Fluorchinolone",drugs:[{name:"Ciprofloxacin",note:"gramnegativ, Pseudomonas, Enteritis"}]},
+  {klasse:"Aminoglykoside",drugs:[{name:"Gentamicin",note:"Synergist (Endokarditis, Sepsis)"}]},
+  {klasse:"Nitroimidazole",drugs:[{name:"Metronidazol",note:"Anaerobier, C. difficile, H. pylori"}]},
+  {klasse:"Lincosamide",drugs:[{name:"Clindamycin",note:"grampositiv + Anaerobier; bei Pen.-Allergie"}]},
+  {klasse:"Antituberkulotika",drugs:[{name:"Isoniazid · Rifampicin · Pyrazinamid · Ethambutol",note:"TB-Schema (HRZE → HR)"}]},
+  {klasse:"Polymyxine",drugs:[{name:"Colistin",note:"4-MRGN, Reserve"}]},
+  {klasse:"Weitere",drugs:[
+    {name:"Fosfomycin · Nitrofurantoin",note:"unkomplizierter HWI"},
+    {name:"Fidaxomicin",note:"C. difficile, 1. Wahl"},
+    {name:"Bismut + PPI",note:"Bestandteile der H.-pylori-Quadrupeltherapie"}]},
+];
+
+const mnemonics = [
+  {title:"Tuberkulose — „2 + 4“",body:"2 Monate Vierfachtherapie (Isoniazid + Rifampicin + Pyrazinamid + Ethambutol), dann 4 Monate Zweifach (Isoniazid + Rifampicin). Gesamt 6 Monate. Merke die vier Substanzen als R-I-P-E."},
+  {title:"H. pylori — Bismut-Quadrupel „PBTM“",body:"PPI + Bismut + Tetracyclin + Metronidazol. Merksatz: „Pylori Bekämpft Tom Mittwochs“."},
+  {title:"Meningitis — Listerien-Lücke",body:"Cephalosporine wirken NICHT gegen Listerien → bei Risikogruppen immer Ampicillin dazu (deckt genau die Listerien-Lücke)."},
+  {title:"Endokarditis — Erreger steuert Antibiotikum",body:"MSSA → Flucloxacillin/Cefazolin · MRSA → Vancomycin · Enterok./Streptok. → Ampicillin + Ceftriaxon · HACEK → Ceftriaxon."},
+  {title:"Atemwegs-Trio",body:"Otitis, Sinusitis & CAP teilen S. pneumoniae, H. influenzae, M. catarrhalis → Amoxicillin. Makrolid ergänzt die Atypiker."},
+  {title:"Gonorrhö — nie allein",body:"Ceftriaxon immer + Azithromycin — deckt die häufige Chlamydien-Koinfektion mit ab."},
+  {title:"Syphilis = Penicillin G",body:"In allen Stadien."},
+  {title:"C. difficile — neue Reihenfolge",body:"Fidaxomicin (1. Wahl) → Vancomycin p.o. → Metronidazol i.v. Auslösendes Antibiotikum absetzen."},
+  {title:"Unkomplizierter HWI — „FuN“",body:"Fosfomycin und Nitrofurantoin (→ E. coli, Enterokokken). Kompliziert → Pip/Tazo oder Carbapenem gegen ESBL/Proteus/Klebsiella."},
+  {title:"Erysipel vs. Phlegmone",body:"Erysipel = reine Streptokokken → Penicillin V. Phlegmone deckt zusätzlich MSSA → Cefazolin/Flucloxacillin."},
+  {title:"MRSA-Reserve & Daptomycin-Falle",body:"Vancomycin oder Linezolid zuerst; Reserve Daptomycin, Ceftarolin. Cave: Daptomycin NICHT bei Pneumonie (Surfactant-Inaktivierung)."},
+  {title:"MRGN-Stufen",body:"3-MRGN → Carbapenem (gegen ESBL-Enterobacterales). 4-MRGN (carbapenemresistent) → Ceftazidim/Avibactam, Ceftolozan/Tazobactam, Colistin."},
+  {title:"Sepsis — „hit hard & early“",body:"Pip/Tazo breit (inkl. Pseudomonas) + Linezolid/Vancomycin bei MRSA; schwer + Carbapenem/Ciprofloxacin gegen MRGN. Dann deeskalieren."},
+  {title:"Borreliose — Stadium entscheidet",body:"Früh oral Doxycyclin/Amoxicillin; Neuroborreliose i.v. Ceftriaxon. Doxycyclin nicht < 8 J. / Schwangere."},
+];
+
+const concepts = [
+  {cat:"setting",q:"Welcher Wirkstoff schließt im Meningitis-Schema die Listerien-Lücke?",a:"Ampicillin (Cephalosporine wirken nicht gegen Listerien)."},
+  {cat:"setting",q:"Wozu das Makrolid bei ambulant erworbener Pneumonie?",a:"Abdeckung der atypischen Erreger (Mykoplasmen, Chlamydophila)."},
+  {cat:"setting",q:"Endokarditis: womit deckt man MSSA vs. MRSA ab?",a:"MSSA → Flucloxacillin / Cefazolin; MRSA → Vancomycin ± Rifampicin."},
+  {cat:"setting",q:"Endokarditis: welches Antibiotikum gegen die HACEK-Gruppe?",a:"Ceftriaxon."},
+  {cat:"ambulant",q:"Therapie der Syphilis?",a:"Penicillin G — in allen Stadien."},
+  {cat:"ambulant",q:"Therapie der Gonorrhö?",a:"Ceftriaxon + Azithromycin (Kombi wegen Chlamydien-Koinfektion)."},
+  {cat:"nosokomial",q:"1. Wahl bei C.-difficile-Kolitis?",a:"Fidaxomicin → dann Vancomycin p.o. → Metronidazol i.v. Auslöser absetzen."},
+  {cat:"spezial",q:"TB-Standardtherapie?",a:"2 Monate HRZE → 4 Monate HR. Gesamt 6 Monate."},
+  {cat:"spezial",q:"H.-pylori-Quadrupeltherapie?",a:"PPI + Bismut + Tetracyclin + Metronidazol."},
+  {cat:"setting",q:"Womit deckt man bei kompliziertem HWI ESBL / Proteus / Klebsiella ab?",a:"Piperacillin/Tazobactam oder Carbapenem."},
+  {cat:"resistenz",q:"Welches MRSA-Reserve-Antibiotikum ist bei Pneumonie ungeeignet?",a:"Daptomycin — wird durch Surfactant inaktiviert."},
+  {cat:"resistenz",q:"3-MRGN vs. 4-MRGN — Therapie?",a:"3-MRGN: Carbapenem (ESBL). 4-MRGN: Ceftazidim/Avibactam, Ceftolozan/Tazobactam ± Colistin."},
+  {cat:"setting",q:"Bakterielle Enteritis: 1. Wahl gegen Campylobacter?",a:"Azithromycin (Salmonella/Shigella/Yersinia → Ciprofloxacin oder Ceftriaxon)."},
+  {cat:"setting",q:"Erysipel vs. Phlegmone — Unterschied in der Abdeckung?",a:"Erysipel = Streptokokken (Penicillin V); Phlegmone zusätzlich MSSA (Cefazolin/Flucloxacillin)."},
+];
+
+/* ================= Karten ================= */
+function buildCards(){
+  const cards=[];
+  diseases.forEach(d=>{
+    cards.push({type:"Erreger",cat:d.cat,q:`Häufigste Erreger: ${d.name}?`,a:d.pathogens.join(" · ")});
+    cards.push({type:"Therapie",cat:d.cat,q:`Empirische Therapie: ${d.name}?`,
+      a:d.coverage.map(c=>`${c.ctx}: ${c.drug}${c.note?` (${c.note})`:""}${c.covers?`  →  ${c.covers}`:""}`).join("\n")});
+    d.coverage.forEach(c=>{ if(c.covers) cards.push({type:"Abdeckung",cat:d.cat,q:`${d.name}: Wogegen wirkt „${c.drug}“?`,a:c.covers}); });
+  });
+  reverseLookup.forEach(r=> cards.push({type:"Rückwärts",cat:r.cat,q:`Wo wird ${r.drug} eingesetzt?`,a:r.where.join(" · ")}));
+  concepts.forEach(c=> cards.push({type:"Konzept",cat:c.cat,q:c.q,a:c.a}));
+  return cards;
+}
+const ALL_CARDS = buildCards();
+const TYPES = ["Alle","Erreger","Therapie","Abdeckung","Rückwärts","Konzept"];
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function chipHTML(cat){const c=CAT[cat];return `<span class="chip" style="background:${c.cbg};color:${c.ctx};border-color:${c.cbd}"><span class="dot" style="background:${c.dot}"></span>${c.label}</span>`;}
+const CHEV='<svg class="chev" id="__CH__" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+const BULB='<svg class="ic bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>';
+
+/* ================= State ================= */
+const S = {
+  tab:"uebersicht", ov:"krankheit", open:{},
+  fcType:"Alle", fcOrder:[], fcIdx:0, fcShow:false,
+  qType:"Alle", qPhase:"setup", qQueue:[], qShow:false, qFirst:0, qTotal:0, qMissed:[]
+};
+
+/* ================= Render ================= */
+function poolFor(t){ return t==="Alle"?ALL_CARDS:ALL_CARDS.filter(c=>c.type===t); }
+
+function renderTabs(){
+  const tabs=[["uebersicht","Übersicht"],["karteikarten","Karteikarten"],["quiz","Quiz"],["eselsbruecken","Eselsbrücken"]];
+  document.getElementById("tabs").innerHTML = tabs.map(([id,l])=>
+    `<button class="tab ${S.tab===id?"active":""}" onclick="setTab('${id}')">${l}</button>`).join("");
+}
+
+function render(){
+  renderTabs();
+  const el=document.getElementById("content");
+  if(S.tab==="uebersicht") el.innerHTML=viewOverview();
+  else if(S.tab==="karteikarten") el.innerHTML=viewFlash();
+  else if(S.tab==="quiz") el.innerHTML=viewQuiz();
+  else el.innerHTML=viewMnem();
+}
+
+/* ---- Übersicht ---- */
+function viewOverview(){
+  const legend=`<div class="card legend">${Object.keys(CAT).map(chipHTML).join("")}</div>`;
+  const seg=`<div class="seg">
+    ${[["krankheit","Nach Krankheit"],["antibiotikum","Nach Antibiotikum"],["klasse","Nach Wirkstoffklasse"]]
+      .map(([id,l])=>`<button class="${S.ov===id?"active":""}" onclick="setOv('${id}')">${l}</button>`).join("")}
+  </div>`;
+  let body="";
+  if(S.ov==="krankheit"){
+    const allOpen=Object.values(S.open).filter(Boolean).length===diseases.length;
+    body=`<div class="toolbar"><span class="muted">Jede Therapie zeigt, welches Antibiotikum welche Erreger abdeckt.</span>
+          <button class="link" onclick="toggleAll()">${allOpen?"Alle zu":"Alle auf"}</button></div>`;
+    body+=diseases.map((d,i)=>diseaseHTML(d,i)).join("");
+  } else if(S.ov==="antibiotikum"){
+    body=`<p class="muted">Antibiotikum → wo eingesetzt und gegen welche Erreger.</p>`;
+    body+=reverseLookup.map(r=>`<div class="card row blk">
+      <div class="top"><span class="drugname mono">${esc(r.drug)}</span>${chipHTML(r.cat)}</div>
+      <ul class="arrowlist">${r.where.map(w=>`<li><span class="a">→</span><span>${esc(w)}</span></li>`).join("")}</ul>
+    </div>`).join("");
+  } else {
+    body=`<p class="muted">Alle Substanzen, nach Wirkstoffklasse sortiert.</p>`;
+    body+=drugClasses.map(g=>`<div class="card row blk">
+      <div class="drugname" style="margin-bottom:8px">${esc(g.klasse)}</div>
+      ${g.drugs.map(dr=>`<div class="cls-line"><span class="cls-drug mono">${esc(dr.name)}</span> — <span class="cls-note">${esc(dr.note)}</span></div>`).join("")}
+    </div>`).join("");
+  }
+  return legend+seg+body;
+}
+
+function diseaseHTML(d,i){
+  const c=CAT[d.cat], open=!!S.open[i];
+  const cov=d.coverage.map(c2=>`<div class="cov-item">
+      <div class="cov-ctx">${esc(c2.ctx)}</div>
+      <div class="cov-drug mono">${esc(c2.drug)}${c2.note?` <span class="cov-note">· ${esc(c2.note)}</span>`:""}</div>
+      ${c2.covers?`<div class="cov-cover"><span class="tgt">◎</span><span>deckt: <b>${esc(c2.covers)}</b></span></div>`:""}
+    </div>`).join("");
+  return `<div class="disease card" style="border-left-color:${c.left}">
+    <button class="d-head" onclick="toggleDisease(${i})">
+      <div style="flex:1;min-width:0">
+        <div class="d-title">${esc(d.name)}</div>
+        <div class="d-pre">${esc(d.pathogens[0])}${d.pathogens.length>1?" u. a.":""}</div>
+      </div>
+      ${chipHTML(d.cat)}
+      <svg class="chev ${open?"up":""}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    ${open?`<div class="d-body">
+      <div class="lbl">Erreger</div><div style="font-size:14px;color:#334155">${esc(d.pathogens.join(" · "))}</div>
+      <div class="lbl">Therapie & Erreger-Abdeckung</div>${cov}
+      <div class="pearl">${BULB}<span>${esc(d.pearls)}</span></div>
+    </div>`:""}
+  </div>`;
+}
+
+/* ---- Karteikarten ---- */
+function ensureFcOrder(){
+  const pool=poolFor(S.fcType);
+  if(S.fcOrder.length!==pool.length){ S.fcOrder=shuffle(pool.map((_,i)=>i)); S.fcIdx=0; S.fcShow=false; }
+}
+function chipsHTML(active,fn){
+  return `<div class="chips">${TYPES.map(t=>`<button class="fchip ${active===t?"active":""}" onclick="${fn}('${t}')">${t}</button>`).join("")}</div>`;
+}
+function viewFlash(){
+  ensureFcOrder();
+  const pool=poolFor(S.fcType);
+  const card=pool[S.fcOrder[S.fcIdx]];
+  return chipsHTML(S.fcType,"fcType")+`
+    <div class="toolbar"><span class="muted">Karte ${S.fcIdx+1} / ${pool.length}</span>
+      <button class="link" onclick="fcShuffle()">Neu mischen</button></div>
+    <div class="fc" onclick="fcFlip()">
+      <div class="meta">${chipHTML(card.cat)}<span class="ttype">${card.type}</span></div>
+      <div class="q">${esc(card.q)}</div>
+      ${S.fcShow?`<div class="a mono">${esc(card.a)}</div>`:`<div class="hint">Tippen zum Aufdecken</div>`}
+    </div>
+    <div class="grid3">
+      <button class="btn btn-ghost" onclick="fcPrev()">← Zurück</button>
+      <button class="btn btn-primary" onclick="fcFlip()">${S.fcShow?"Verbergen":"Antwort"}</button>
+      <button class="btn btn-ghost" onclick="fcNext()">Weiter →</button>
+    </div>`;
+}
+
+/* ---- Quiz ---- */
+function viewQuiz(){
+  if(S.qPhase==="setup"){
+    const pool=poolFor(S.qType);
+    return `<p class="muted">Selbsttest: Frage lesen, überlegen, aufdecken, ehrlich bewerten. Verpasste Karten kommen in derselben Runde wieder.</p>
+      <div class="lbl">Kartentyp</div>${chipsHTML(S.qType,"qType")}
+      <div style="margin-top:16px"><button class="btn btn-primary" onclick="qStart()">Runde starten · ${pool.length} Karten</button></div>`;
+  }
+  if(S.qPhase==="done"){
+    const pct=S.qTotal?Math.round(S.qFirst/S.qTotal*100):0;
+    return `<div class="card score">
+      <div class="big">${S.qFirst} / ${S.qTotal}</div>
+      <div class="muted" style="margin-top:4px">auf Anhieb gewusst (${pct} %)</div>
+      <div class="bar" style="margin-top:14px"><i style="width:${pct}%;background:#059669"></i></div>
+      <div class="muted" style="margin-top:14px">${S.qMissed.length>0?(S.qMissed.length+" Karte(n) brauchten Wiederholung."):"Alles im ersten Anlauf — stark."}</div>
+    </div>
+    <div class="grid3">
+      <button class="btn btn-primary" onclick="qStart()">Neue Runde</button>
+      <button class="btn btn-ghost" ${S.qMissed.length?"":"disabled style=opacity:.4"} onclick="qMissedRound()">Nur Verpasste (${S.qMissed.length})</button>
+      <button class="btn btn-ghost" onclick="qSetup()">Auswahl ändern</button>
+    </div>`;
+  }
+  const cur=S.qQueue[0];
+  const cleared=S.qTotal-S.qQueue.length;
+  const prog=S.qTotal?Math.round(cleared/S.qTotal*100):0;
+  return `<div><div class="toolbar" style="margin-bottom:6px"><span class="muted">Erledigt ${cleared} / ${S.qTotal}</span><span class="muted">Auf Anhieb: ${S.qFirst}</span></div>
+    <div class="bar"><i style="width:${prog}%"></i></div></div>
+    <div class="fc" style="cursor:default;margin-top:14px">
+      <div class="meta">${chipHTML(cur.card.cat)}<span class="ttype">${cur.card.type}</span>${cur.tries>0?'<span class="rep">Wiederholung</span>':""}</div>
+      <div class="q">${esc(cur.card.q)}</div>
+      ${S.qShow?`<div class="a mono">${esc(cur.card.a)}</div>`:""}
+    </div>
+    ${S.qShow?`<div class="grid2">
+        <button class="btn btn-bad" onclick="qGrade(0)">✕ Nochmal</button>
+        <button class="btn btn-good" onclick="qGrade(1)">✓ Gewusst</button>
+      </div>`:`<div style="margin-top:14px"><button class="btn btn-primary" onclick="qReveal()">Antwort zeigen</button></div>`}
+    <div style="text-align:center;margin-top:14px"><button class="link" onclick="qSetup()">Runde abbrechen</button></div>`;
+}
+
+/* ---- Eselsbrücken ---- */
+function viewMnem(){
+  return mnemonics.map(m=>`<div class="card mne">${BULB}<div><b>${esc(m.title)}</b><div class="body">${esc(m.body)}</div></div></div>`).join("");
+}
+
+/* ================= Handlers ================= */
+function setTab(t){S.tab=t;window.scrollTo(0,0);render();}
+function setOv(v){S.ov=v;render();}
+function toggleDisease(i){S.open[i]=!S.open[i];render();}
+function toggleAll(){const all=Object.values(S.open).filter(Boolean).length===diseases.length;S.open={};if(!all)diseases.forEach((_,i)=>S.open[i]=true);render();}
+function fcType(t){S.fcType=t;S.fcOrder=[];render();}
+function fcFlip(){S.fcShow=!S.fcShow;render();}
+function fcNext(){const n=poolFor(S.fcType).length;S.fcIdx=(S.fcIdx+1)%n;S.fcShow=false;render();}
+function fcPrev(){const n=poolFor(S.fcType).length;S.fcIdx=(S.fcIdx-1+n)%n;S.fcShow=false;render();}
+function fcShuffle(){S.fcOrder=[];ensureFcOrder();S.fcOrder=shuffle(S.fcOrder);S.fcIdx=0;S.fcShow=false;render();}
+function qType(t){S.qType=t;render();}
+function qStart(){const p=poolFor(S.qType);S.qQueue=shuffle(p).map(c=>({card:c,tries:0}));S.qTotal=p.length;S.qFirst=0;S.qMissed=[];S.qShow=false;S.qPhase="running";render();}
+function qMissedRound(){const p=S.qMissed.slice();S.qQueue=shuffle(p).map(c=>({card:c,tries:0}));S.qTotal=p.length;S.qFirst=0;S.qMissed=[];S.qShow=false;S.qPhase="running";render();}
+function qSetup(){S.qPhase="setup";render();}
+function qReveal(){S.qShow=true;render();}
+function qGrade(known){
+  const cur=S.qQueue[0], rest=S.qQueue.slice(1);
+  if(known){ if(cur.tries===0)S.qFirst++; S.qShow=false; if(rest.length===0){S.qQueue=[];S.qPhase="done";} else S.qQueue=rest; }
+  else { if(!S.qMissed.includes(cur.card))S.qMissed.push(cur.card); S.qQueue=rest.concat([{card:cur.card,tries:cur.tries+1}]); S.qShow=false; }
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
